@@ -1,0 +1,28 @@
+* {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #9d8888;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20 px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.form {
+  display: inline-block;
+  background-color: rgb(97, 11, 74);
+  border-radius: 7px;
+}
+
+.form__input {
+  margin: 5px;
+}
+
+.error {
+  border: 3px solid rgb(248, 59, 59);
+}

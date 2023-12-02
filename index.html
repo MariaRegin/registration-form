@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration</h1>
+      <div class="form-container">
+        <form class="form" novalidate>
+          <h2>Registration form</h2>
+          <label class="form__label" for="name">Name:</label>
+          <input
+            class="form__input"
+            type="text"
+            id="name"
+            placeholder="Your name"
+            minlength="2"
+            maxlength="20"
+            pattern="^[a-zA-Z ]+$"
+            required
+          />
+          <span class="error-message" id="name-error"></span>
+          <br />
+          <label class="form__label" for="email">Email:</label>
+          <input
+            class="form__input"
+            type="email"
+            id="email"
+            placeholder="Your email"
+            pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i"
+            required
+          />
+          <span class="error-message" id="email-error"></span>
+          <br />
+          <label class="form__label" for="age">Age:</label>
+          <input
+            class="form__input"
+            type="number"
+            id="age"
+            placeholder="Your age"
+            required
+          />
+          <span class="error-message" id="age-error"></span>
+          <br />
+          <label class="form__label" for="radioOne">Male:</label>
+          <input
+            class="form__input"
+            type="radio"
+            name="formRadio"
+            value="male"
+            id="radioOne"
+          />
+          <label class="form__label" for="radioTwo">Female:</label>
+          <input
+            class="form__input"
+            type="radio"
+            name="formRadio"
+            value="female"
+            id="radioTwo"
+          />
+          <span class="error-message" id="gender-error"></span>
+          <br />
+          <label class="form__label" for="select">Profession:</label>
+          <select class="form__input" id="select" required>
+            <option value="medicalWorker">Medical worker</option>
+            <option value="programmist">Programmist</option>
+            <option value="teacher">Teacher</option>
+            <option value="designer">Designer</option>
+            <option value="engineer">Engineer</option>
+            <option value="seller">Seller</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="error-message" id="profession-error"></span>
+          <br />
+          <label class="form__label" for="password">Password:</label>
+          <input
+            class="form__input"
+            type="password"
+            id="password"
+            placeholder="Your password"
+            minlength="8"
+            pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$/"
+            required
+          />
+          <span class="error-message" id="password-error"></span>
+          <br />
+          <label class="form__label" for="passwordConfirm">Password:</label>
+          <input
+            class="form__input"
+            type="password"
+            id="passwordConfirm"
+            placeholder="Confirm password"
+            minlength="8"
+            pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$/"
+            required
+          />
+          <span class="error-message" id="confirm-password-error"></span>
+          <br />
+
+          <input class="form__input" type="checkbox" id="checkbox" required />
+          <label class="form__label" for="checkbox"
+            >I agree with processing of my personal data</label
+          >
+          <span class="error-message" id="agreement-error"></span>
+          <br />
+          <input class="form__submit" type="submit" value="submit" />
+        </form>
+      </div>
+    </div>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
