@@ -1,13 +1,13 @@
 const form = document.querySelector("form");
 
 form.addEventListener("submit", function (event) {
+  let errorSpan = document.querySelectorAll(".error-message");
   let inputs = document.querySelectorAll(".form__input");
+
   event.preventDefault();
 
   for (let input = 0; input < inputs.length; input++) {
-    let errorSpan = document.querySelector(".error-message");
-
-    if (!inputs[input].checkValidity()) {
+    if (!inputs[input].validity.valid) {
       inputs[input].classList.add("error");
       errorSpan.innerHTML = inputs[input].validationMessage;
     }
