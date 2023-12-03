@@ -1,6 +1,17 @@
 * {
   font-family: "IBM Plex Sans", sans-serif;
-  color: #9d8888;
+  color: #423e3e;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 45px;
+  padding: 30px;
+  color: #3b3636;
+}
+
+h2 {
+  font-size: 30px;
 }
 
 .container {
@@ -14,15 +25,32 @@
 }
 
 .form {
-  display: inline-block;
-  background-color: rgb(97, 11, 74);
+  background-color: rgb(201, 191, 149);
   border-radius: 7px;
+  padding: 30px;
 }
 
 .form__input {
+  border: 2.5px solid rgb(118, 237, 100);
+  background-image: linear-gradient(
+    to right,
+    rgb(216, 240, 207),
+    rgb(116, 154, 116)
+  );
+  border-radius: 7px;
   margin: 5px;
 }
 
 .error {
-  border: 3px solid rgb(248, 59, 59);
+  border: 2.5px solid rgb(245, 76, 76);
+  background-image: linear-gradient(
+    to right,
+    rgb(230, 188, 195),
+    rgb(149, 134, 128)
+  );
+  border-radius: 7px;
+}
+
+.error-message {
+  margin: 20px;
 }

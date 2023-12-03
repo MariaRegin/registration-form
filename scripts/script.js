@@ -1,4 +1,6 @@
 const form = document.querySelector("form");
+const checkbox = document.querySelector("#checkbox");
+const checkboxError = document.querySelector("#agreement-error");
 
 form.addEventListener("submit", function (event) {
   let errorSpan = document.querySelectorAll(".error-message");
@@ -9,57 +11,17 @@ form.addEventListener("submit", function (event) {
   for (let input = 0; input < inputs.length; input++) {
     if (!inputs[input].validity.valid) {
       inputs[input].classList.add("error");
-      errorSpan.innerHTML = inputs[input].validationMessage;
+      errorSpan[input].innerHTML = inputs[input].validationMessage;
+    }
+    if (inputs[input].validity.valid) {
+      inputs[input].classList.remove("error");
+      errorSpan[input].innerHTML = "+";
+    } else if (!checkbox.checked) {
+      checkboxError.classList.add("error");
+      checkbox.innerHTML = checkbox.validationMessage;
+    } else if (inputs[input].validity.valid) {
+      console.log(inputs[input].value);
     }
   }
+  form.reset();
 });
-
-//Ниже старый вариант кода, он тоже у меня не сработал, был в отдельной функции
-
-//if (validity.patternMismatch) {
-//  input.classList.add("error");
-// errorSpan.innerHTML = "Wrong format";
-//}
-
-//if (validity.rangeOverflow) {
-// let max = input.max;
-//input.classList.add("error");
-//errorSpan.innerHTML = "Maximum possible value is " + max;
-//}
-
-//if (validity.rangeUnderflow) {
-// let min = input.min;
-//input.classList.add("error");
-//errorSpan.innerHTML = "Minimum possible value is " + min;
-// }
-
-//if (validity.valueMissing) {
-// input.classList.add("error");
-//errorSpan.innerHTML = "Value is missing";
-//}
-
-//if (validity.typeMismatch) {
-// input.classList.add("error");
-//errorSpan.innerHTML = "Wrong type of data";
-//}
-
-//if (validity.tooLong) {
-// input.classList.add("error");
-//errorSpan.innerHTML = "Value is too long";
-//}
-
-//if (validity.tooShort) {
-// input.classList.add("error");
-//errorSpan.innerHTML = "Value is too short";
-//}
-
-//if (validity.stepMismatch) {
-//input.classList.add("error");
-//errorSpan.innerHTML = "Step is wrong";
-//}
-
-//if (validity.badInput) {
-// input.classList.add("error");
-//errorSpan.innerHTML = "Wrong format";
-// }
-//}
